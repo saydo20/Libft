@@ -6,14 +6,19 @@
 #    By: saad <saad@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/13 13:37:58 by saad              #+#    #+#              #
-#    Updated: 2025/09/13 15:03:26 by saad             ###   ########.fr        #
+#    Updated: 2025/09/13 19:15:29 by saad             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRCS = ft_isalpha.c \
-		ft_putchar.c
+		ft_isdigit.c \
+		ft_isalnum.c \
+		ft_isascii.c \
+		ft_isprint.c \
+		ft_strlen.c \
+		ft_bzero.c
 
 OBJS := $(SRCS:.c=.o)
 

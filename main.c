@@ -1,7 +1,7 @@
 #include "libft.h"
-
+#include <stdio.h>
 int main(void)
 {
-    ft_putchar('A');
+	printf("%ld" , ft_strlen("saad"));
     return 0;
 }
