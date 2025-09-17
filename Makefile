@@ -6,19 +6,13 @@
 #    By: saad <saad@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/13 13:37:58 by saad              #+#    #+#              #
-#    Updated: 2025/09/13 19:15:29 by saad             ###   ########.fr        #
+#    Updated: 2025/09/17 12:12:50 by saad             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS = ft_isalpha.c \
-		ft_isdigit.c \
-		ft_isalnum.c \
-		ft_isascii.c \
-		ft_isprint.c \
-		ft_strlen.c \
-		ft_bzero.c
+SRCS = $(filter-out main.c, $(wildcard *.c))
 
 OBJS := $(SRCS:.c=.o)
 
@@ -26,18 +20,23 @@ INCLUDES = includes
 
 CFLAGS = -Wall -Wextra -Werror 
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re main
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 		ar -crs $@ $^
+
+main: main.c $(NAME)
+		cc main.c $(NAME) -o program
 %.o: %.c
 		gcc $(CFLAGS) -c $< -I$(INCLUDES) -o $@
 clean:
 	rm -f $(OBJS)
+	rm -f program
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f program
 
 re: fclean all
