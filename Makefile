@@ -6,7 +6,7 @@
 #    By: saad <saad@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/13 13:37:58 by saad              #+#    #+#              #
-#    Updated: 2025/09/17 12:12:50 by saad             ###   ########.fr        #
+#    Updated: 2025/09/17 17:42:27 by saad             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ $(NAME): $(OBJS)
 		ar -crs $@ $^
 
 main: main.c $(NAME)
-		cc main.c $(NAME) -o program
+		cc $(CFLAGS) main.c $(NAME) -o program
 %.o: %.c
 		gcc $(CFLAGS) -c $< -I$(INCLUDES) -o $@
 clean:
