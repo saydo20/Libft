@@ -6,7 +6,7 @@
 /*   By: saad <saad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 12:39:45 by saad              #+#    #+#             */
-/*   Updated: 2025/09/19 13:08:07 by saad             ###   ########.fr       */
+/*   Updated: 2025/09/19 13:15:35 by saad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
 	if(!s)
 		return NULL;
-	if(s[0] == '\0')
-		return ft_strdup("");
 	s_len = ft_strlen(s);
+	if(start >= s_len)
+		return ft_strdup("");
 	if(len > s_len - start)
 		len = s_len - start;
 	ptr = malloc(len + 1);
